@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV & Portfolio | ณัฐกานต์ อยู่สะอาด (Nattakan Yusaat)</title>
+    
+    <!-- Google Fonts: Prompt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome (สำหรับไอคอน) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #2563eb; /* สีน้ำเงินหลัก (Tech / Professional) */
+            --primary-hover: #1d4ed8;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #0f172a;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Prompt', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navbar */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 0 40px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary-color);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
+            flex-shrink: 0;
+        }
+
+        .hero-text h1 {
+            font-size: 2.2rem;
+            line-height: 1.2;
+            margin-bottom: 5px;
+        }
+
+        .hero-text h2 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .hero-text p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            max-width: 650px;
+        }
+
+        .contact-info-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .contact-info-list div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-info-list i {
+            color: var(--primary-color);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border-color);
+            background-color: var(--card-bg);
+            color: var(--text-color);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* Section Global */
+        section {
+            padding: 45px 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            color: var(--primary-color);
+        }
+
+        /* Timeline / Experience & Education */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .timeline-card {
+            background: var(--card-bg);
+            padding: 22px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            transition: box-shadow 0.3s;
+        }
+
+        .timeline-card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .role {
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+
+        .company {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            background: var(--bg-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        .timeline-card ul {
+            padding-left: 20px;
+            color: var(--text-muted);
+        }
+
+        .timeline-card ul li {
+            margin-bottom: 8px;
+        }
+
+        .timeline-card ul li strong {
+            color: var(--text-color);
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: var(--card-bg);
+            padding: 22px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+        }
+
+        .skill-category h3 {
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            font-size: 0.85rem;
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            padding: 6px 12px;
+            border-radius: 6px;
+            color: var(--text-color);
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .project-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .project-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .project-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            background-color: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 15px 0;
+        }
+
+        .social-links a {
+            color: var(--text-muted);
+            font-size: 1.4rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            .contact-info-list {
+                justify-content: center;
+            }
+            .btn-group {
+                justify-content: center;
+            }
+            .timeline-header {
+                flex-direction: column;
+                gap: 5px;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <nav>
+        <div class="container nav-container">
+            <a href="#" class="logo">&lt;Nattakan.Y /&gt;</a>
+            <ul class="nav-links">
+                <li><a href="#about">เกี่ยวกับฉัน</a></li>
+                <li><a href="#experience">ประสบการณ์</a></li>
+                <li><a href="#education">การศึกษา</a></li>
+                <li><a href="#skills">ความสามารถ</a></li>
+                <li><a href="#projects">ผลงาน GitHub</a></li>
+                <li><a href="#contact">ติดต่อ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <header class="hero" id="about">
+            <img src="profile.jpg" alt="ณัฐกานต์ อยู่สะอาด" class="hero-img">
+            <div class="hero-text">
+                <h1>ณัฐกานต์ อยู่สะอาด (Nattakan Yusaat)</h1>
+                <h2>IT Support Specialist / IT Helpdesk Officer</h2>
+                <p>
+                    IT Support Specialist ที่มีประสบการณ์ดูแลและแก้ปัญหาระบบสารสนเทศ (Hardware, Software, Basic Network) แก่ผู้ใช้งานในองค์กรอย่างมืออาชีพ มีความเชี่ยวชาญด้านการบริหารจัดการอุปกรณ์ IT (IT Asset & Inventory Management) การดูแลระบบปฏิบัติการ Windows และ Microsoft 365 พร้อมทักษะการสื่อสารและใจรักงานบริการ (Service Mind) ปัจจุบันกำลังศึกษาต่อระดับปริญญาตรี คณะเทคโนโลยีสารสนเทศและการสื่อสาร มหาวิทยาลัยศรีปทุม
+                </p>
+                <div class="contact-info-list">
+                    <div><i class="fa-solid fa-phone"></i> 098-9811130</div>
+                    <div><i class="fa-solid fa-envelope"></i> Nattakanyusaat@gmail.com</div>
+                    <div><i class="fa-solid fa-location-dot"></i> จตุจักร, กรุงเทพมหานคร</div>
+                </div>
+                <div class="btn-group">
+                    <a href="mailto:Nattakanyusaat@gmail.com" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> ติดต่องาน</a>
+                    <a href="Resume.pdf" class="btn btn-outline" target="_blank"><i class="fa-solid fa-file-pdf"></i> ดาวน์โหลด Resume</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> ประวัติการทำงาน (Work Experience)</h2>
+            <div class="timeline">
+                
+                <!-- Experience 1 -->
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <div>
+                            <div class="role">IT Support</div>
+                            <div class="company">Zarain</div>
+                        </div>
+                        <span class="date">ต.ค. 2024 - ปัจจุบัน</span>
+                    </div>
+                    <ul>
+                        <li><strong>User & Technical Support:</strong> ให้บริการ Helpdesk ดูแลและแก้ไขปัญหาเทคนิคด้าน Hardware, Software, ระบบ Internet/Network เบื้องต้น และอุปกรณ์ต่อพ่วง (Printer) แก่บุคลากรในองค์กร</li>
+                        <li><strong>System & Software Setup:</strong> ดำเนินการติดตั้ง (Install), อัปเกรด (Upgrade) ระบบปฏิบัติการ Windows และดูแลการใช้งาน Microsoft 365</li>
+                        <li><strong>IT Asset & Inventory Management:</strong> ตรวจสอบ เคลื่อนย้าย จัดเก็บ และอัปเดตข้อมูลบัญชีคุมอุปกรณ์สารสนเทศ (Hardware/Software Inventory) ของบริษัทอย่างเป็นระบบ</li>
+                        <li><strong>Vendor Coordination:</strong> ติดต่อประสานงานกับหน่วยงานภายนอกในการรับ-ส่งซ่อมอุปกรณ์ IT</li>
+                    </ul>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <div>
+                            <div class="role">พนักงานสโตร์</div>
+                            <div class="company">Fujikura Electronics</div>
+                        </div>
+                        <span class="date">พ.ค. 2021 - ก.ย. 2024</span>
+                    </div>
+                    <ul>
+                        <li>บริหารจัดการคลังสินค้า วัตถุดิบ และอุปกรณ์ ตรวจรับและจัดจ่ายวัตถุดิบให้ฝ่ายผลิต</li>
+                        <li>ควบคุมสต็อคสินค้าและจัดเก็บอย่างเป็นระบบ นำทักษะความละเอียดรอบคอบมาประยุกต์ใช้ในการจัดทำ IT Inventory ในปัจจุบัน</li>
+                    </ul>
+                </div>
+
+                <!-- Internship -->
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <div>
+                            <div class="role">IT Support Intern (ฝึกงาน 4 เดือน)</div>
+                            <div class="company">Beertip Brewery 1991</div>
+                        </div>
+                        <span class="date">การฝึกงาน</span>
+                    </div>
+                    <ul>
+                        <li>สนับสนุนงานด้าน IT Support ปฏิบัติงานช่วยเหลือทีมในการดูแลอุปกรณ์คอมพิวเตอร์และระบบสารสนเทศภายในองค์กร</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> ประวัติการศึกษา (Education)</h2>
+            <div class="timeline">
+                
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <div>
+                            <div class="role">ปริญญาตรี คณะเทคโนโลยีสารสนเทศและการสื่อสาร</div>
+                            <div class="company">มหาวิทยาลัยศรีปทุม</div>
+                        </div>
+                        <span class="date">กำลังศึกษา (ภาควันอาทิตย์)</span>
+                    </div>
+                </div>
+
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <div>
+                            <div class="role">ปวส. คณะเทคโนโลยีคอมพิวเตอร์</div>
+                            <div class="company">วิทยาลัยเทคนิคพระนครศรีอยุธยา</div>
+                        </div>
+                        <span class="date">สำเร็จการศึกษา ปี 2016</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2 class="section-title"><i class="fa-solid fa-gears"></i> ทักษะและความสามารถ (Skills)</h2>
+            <div class="skills-grid">
+                
+                <div class="skill-category">
+                    <h3><i class="fa-solid fa-laptop-code"></i> IT Support & Technical Operations</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Hardware Troubleshooting</span>
+                        <span class="tag">Software Installation</span>
+                        <span class="tag">Windows OS (10/11)</span>
+                        <span class="tag">Printer & Peripherals Setup</span>
+                        <span class="tag">Basic Network Troubleshooting (LAN, Wi-Fi, IP)</span>
+                        <span class="tag">Microsoft 365 Support</span>
+                        <span class="tag">IT Asset & Inventory Control</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fa-solid fa-users"></i> Soft Skills</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Service Mind</span>
+                        <span class="tag">การสื่อสารและการทำงานเป็นทีม</span>
+                        <span class="tag">การวิเคราะห์และแก้ไขปัญหาหน้างาน</span>
+                        <span class="tag">เรียนรู้งานได้ไว</span>
+                        <span class="tag">มีความรับผิดชอบ</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fa-solid fa-language"></i> ภาษา (Languages)</h3>
+                    <div class="skill-tags">
+                        <span class="tag">ภาษาไทย: ดี</span>
+                        <span class="tag">ภาษาอังกฤษ: ปานกลาง</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- GitHub Projects Section -->
+        <section id="projects">
+            <h2 class="section-title"><i class="fa-brands fa-github"></i> ผลงาน และ GitHub Repositories</h2>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div>
+                        <div class="project-title">IT Asset System Management</div>
+                        <p class="project-desc">ระบบจัดการทรัพย์สินไอทีภายในองค์กรและการควบคุมบัญชีอุปกรณ์สารสนเทศ</p>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/natthakan-lab" target="_blank">
+                            <i class="fa-brands fa-github"></i> ดูบน GitHub
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact & Footer -->
+    <footer id="contact">
+        <div class="container">
+            <h2>ติดต่อ ณัฐกานต์ อยู่สะอาด</h2>
+            <p style="color: var(--text-muted); margin-top: 5px;">
+                39 ซอยลาดพร้าว 30 แขวงจันทรเกษม เขตจตุจักร กรุงเทพมหานคร
+            </p>
+            
+            <div class="social-links">
+                <a href="mailto:Nattakanyusaat@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="tel:0989811130" title="Phone"><i class="fa-solid fa-phone"></i></a>
+                <a href="https://github.com/natthakan-lab" target="_blank" title="GitHub Profile"><i class="fa-brands fa-github"></i></a>
+            </div>
+
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 15px;">
+                &copy; 2026 Nattakan Yusaat. Hosted on GitHub Pages.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
